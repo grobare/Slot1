@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Slot Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="slot-machine">
+      <div class="reels">
+        <div class="reel">
+          <div class="number" id="number1">0</div>
+        </div>
+        <div class="reel">
+          <div class="number" id="number2">0</div>
+        </div>
+        <div class="reel">
+          <div class="number" id="number3">0</div>
+        </div>
+      </div>
+      <div class="controls">
+        <label
+          ><input type="radio" name="reel-bet" id="reel1" value="1" checked />1
+          reel</label
+        >
+        <label
+          ><input type="radio" name="reel-bet" id="reel2" value="2" />2
+          reels</label
+        >
+        <label
+          ><input type="radio" name="reel-bet" id="reel3" value="3" />3
+          reels</label
+        >
+        <button class="spin-btn" onclick="spin()">SPIN</button>
+      </div>
+      <div id="status">
+        <p>Credits: <span id="credits">100</span></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
