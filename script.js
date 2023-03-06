@@ -67,6 +67,6 @@ function spin() {
   }, 1000);
 }
 
-function getBetAmount() {
-  return 1; // always bet 1 credit
-}
+// function getBetAmount() {
+//   return 1; // always bet 1 credit
+// }
