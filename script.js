@@ -70,3 +70,23 @@ function spin() {
 // function getBetAmount() {
 //   return 1; // always bet 1 credit
 // }
+
+// Icons & Pop Up
+
+const settingsIcon = document.querySelector(".settings-icon"); //Icon
+const settingsPopUp = document.querySelector(".popup-container"); // Pop up window
+
+//show Setiings
+settingsIcon.addEventListener("click", () => {
+  settingsPopUp.style.display = "flex";
+});
+
+// Close Pop-up
+const closePopupButtons = document.querySelectorAll(".close-popup");
+
+closePopupButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const popup = button.closest(".popup-container");
+    popup.style.display = "none";
+  });
+});
