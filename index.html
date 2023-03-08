@@ -3,6 +3,10 @@
   <head>
     <title>Simple Slot Game</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arvo"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="slot-machine">
@@ -38,6 +42,7 @@
         <div class="settings-icon">
           <img src="settings.png" alt="Settings" />
         </div>
+        .
         <!-- Status/Credit -->
         <div id="status">
           <p>Credits: <span id="credits">100</span></p>
@@ -47,9 +52,44 @@
     <!-- Pop-up page-->
     <div class="popup-container">
       <div class="popup-content">
-        <h2>Info</h2>
-        <p>Here's some information about the game:</p>
-        <button class="close-popup">Close X</button>
+        <div class="how-to-play">
+          <h2>How to Play</h2>
+          <p>Number 8 is a winning number.</p>
+          <p>By choosing 1 reel you bet on the outcome the first reel.</p>
+          <p>By choosing 2 reels you bet on the outcome of first two reels.</p>
+          <p>
+            By betting on 3 reels you bet on all 3 reels and a chance to win the
+            jackpot
+          </p>
+          <h3>Odds</h3>
+          <p>
+            1 reel: 1 in 10 spins<br />
+            2 reels: 1 in a 100 spins<br />
+            3 reels: 1 in a 1000 spins <br />
+            Jackpot: 1 in 52,000 spins
+          </p>
+        </div>
+        <div class="win-table">
+          <h2>Payouts</h2>
+          <p>
+            Play 1 reel and result is 8XX:<br />
+            YOU WIN 8.8 credits.
+          </p>
+          <p>
+            Play 2 reels and result is 88X:<br />
+            YOU WIN 88 credits.
+          </p>
+          <p>
+            Play 3 reels and results is 888:<br />
+            YOU WIN 888 credits and a chance for The Jackpot game!
+          </p>
+          <h3>The Jackpot</h3>
+          <p>
+            A small portion of each bet goes into the jackpot.<br />
+            Jackpot game is your lucky card out of deck of 52. Good luck!
+          </p>
+          <button class="close-popup">Close <span>X</span></button>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

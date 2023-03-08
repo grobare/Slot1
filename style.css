@@ -5,6 +5,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Arvo";
 }
 
 .slot-machine {
@@ -64,8 +65,7 @@ body {
 }
 
 .settings-icon img {
-  height: 25px;
-  border: 1px solid black;
+  height: 20px;
 }
 .slot-machine {
   position: relative;
@@ -87,11 +87,11 @@ body {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  display: flex;
+  font-size: 14px;
 }
 
 .close-popup {
-  top: 10px;
-  right: 10px;
   background-color: transparent;
   border: none;
   font-size: 16px;
@@ -99,11 +99,34 @@ body {
   cursor: pointer;
 }
 
+.close-popup:hover {
+  text-decoration: underline;
+}
+.close-popup span {
+  color: red;
+  font-weight: 600;
+}
+
+.how-to-play,
+.win-table {
+  flex: 1;
+  background-color: #00000033;
+  padding: 5px;
+}
+
+.win-table {
+  border-left: 1px dashed black;
+}
+
 /* Footer */
 
 .footer {
-  width: 400px;
+  width: 350px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+#status {
+  font-size: 20px;
 }
