@@ -60,12 +60,22 @@ body {
 
 /* Pop Up & Icons */
 
-.settings-icon {
+.settings-icon,
+.music-icon {
   cursor: pointer;
 }
 
+.music button {
+  height: 25px;
+}
+
 .settings-icon img {
-  height: 20px;
+  height: 25px;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .slot-machine {
   position: relative;

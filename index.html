@@ -39,10 +39,14 @@
       </div>
       <div class="footer">
         <!-- Icons  -->
-        <div class="settings-icon">
-          <img src="settings.png" alt="Settings" />
+        <div class="icons">
+          <div class="settings-icon">
+            <img src="info.png" alt="Settings" />
+          </div>
+          <div class="music">
+            <button id="toggle-music">Turn On Music</button>
+          </div>
         </div>
-        .
         <!-- Status/Credit -->
         <div id="status">
           <p>Credits: <span id="credits">100</span></p>
@@ -92,6 +96,10 @@
         </div>
       </div>
     </div>
+    <!-- Audio file -->
+    <audio id="background-music" loop>
+      <source src="/Slot1/background.mp3" type="audio/mpeg" />
+    </audio>
     <script src="script.js"></script>
   </body>
 </html>

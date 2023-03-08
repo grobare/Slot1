@@ -95,3 +95,18 @@ closePopupButtons.forEach((button) => {
     popup.style.display = "none";
   });
 });
+
+//Music
+
+const music = document.getElementById("background-music");
+const toggleMusicButton = document.getElementById("toggle-music");
+
+toggleMusicButton.addEventListener("click", function () {
+  if (music.paused) {
+    music.play();
+    toggleMusicButton.innerText = "Turn Off Music";
+  } else {
+    music.pause();
+    toggleMusicButton.innerText = "Turn On Music";
+  }
+});
