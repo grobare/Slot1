@@ -58,8 +58,13 @@ function spin() {
 
     // compute the new credits balance based on the outcome of the spin
     if (winAmount > 0) {
-      credits += winAmount;
+      credits += winAmount - 1;
       creditDisplay.textContent = credits;
+      creditDisplay.style.color = "green"; //add green color
+      setTimeout(() => {
+        //remove green color after delay
+        creditDisplay.style.color = "black";
+      }, 800);
     } else {
       credits -= 1;
       creditDisplay.textContent = credits;
