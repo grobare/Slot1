@@ -110,3 +110,30 @@ toggleMusicButton.addEventListener("click", function () {
     toggleMusicButton.innerText = "Turn On Music";
   }
 });
+
+//Auto spin
+
+var autoSpinInterval = null;
+
+function autoSpin() {
+  if (!autoSpinInterval) {
+    autoSpinInterval = setInterval(function () {
+      spin();
+    }, 1000);
+  }
+}
+
+function stopAutoSpin() {
+  clearInterval(autoSpinInterval);
+  autoSpinInterval = null;
+}
+
+document.querySelector(".auto-spin-btn").addEventListener("click", function () {
+  if (autoSpinInterval) {
+    stopAutoSpin();
+    this.textContent = "AUTO";
+  } else {
+    autoSpin();
+    this.textContent = "STOP";
+  }
+});

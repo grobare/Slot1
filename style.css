@@ -33,6 +33,7 @@ body {
 
 .reels {
   display: flex;
+  margin-bottom: -10px;
 }
 
 .reel {
@@ -53,41 +54,67 @@ body {
   color: #000;
 }
 
-.spin-btn {
-  width: 150px;
-  height: 50px;
-  background-color: #000;
-  color: #fff;
-  font-size: 24px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
-.spin-btn:hover {
-  background-color: #333;
-}
-
 /* Bet controls */
 
 .controls {
   margin-bottom: -20px;
 }
 
-/* Pop Up & Icons */
+.bet-options {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
 
-.settings-icon,
-.music-icon {
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.spin-btn {
+  width: 150px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.spin-btn:hover,
+.auto-spin-btn:hover {
+  background-color: #333;
+}
+
+.auto-spin-btn {
+  width: 75px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-.music button {
+/* Pop Up & Icons */
+
+.settings-icon,
+#toggle-music {
+  cursor: pointer;
+}
+
+#toggle-music {
   height: 25px;
+  background-color: #000;
+  color: rgb(255, 255, 255);
 }
 
 .settings-icon img {
-  height: 25px;
+  height: 24px;
 }
 .icons {
   display: flex;

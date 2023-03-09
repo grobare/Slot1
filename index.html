@@ -24,19 +24,29 @@
         </div>
       </div>
       <div class="controls">
-        <label
-          ><input type="radio" name="reel-bet" id="reel1" value="1" />1
-          reel</label
-        >
-        <label
-          ><input type="radio" name="reel-bet" id="reel2" value="2" />2
-          reels</label
-        >
-        <label
-          ><input type="radio" name="reel-bet" id="reel3" value="3" checked />3
-          reels</label
-        >
-        <button class="spin-btn" onclick="spin()">SPIN</button>
+        <div class="bet-options">
+          <label
+            ><input type="radio" name="reel-bet" id="reel1" value="1" />1
+            REEL</label
+          >
+          <label
+            ><input type="radio" name="reel-bet" id="reel2" value="2" />2
+            REELS</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="reel-bet"
+              id="reel3"
+              value="3"
+              checked
+            />3 REELS</label
+          >
+        </div>
+        <div class="buttons">
+          <button class="auto-spin-btn">AUTO</button>
+          <button class="spin-btn" onclick="spin()">SPIN</button>
+        </div>
       </div>
       <div class="footer">
         <!-- Icons  -->
