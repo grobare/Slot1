@@ -8,6 +8,17 @@ body {
   font-family: "Arvo";
 }
 
+/* import the font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+.slot-machine h1 {
+  font-family: "Bangers", cursive;
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  margin: 10px 0;
+}
+
 .slot-machine {
   width: 550px;
   height: 400px;
@@ -56,6 +67,12 @@ body {
 
 .spin-btn:hover {
   background-color: #333;
+}
+
+/* Bet controls */
+
+.controls {
+  margin-bottom: -20px;
 }
 
 /* Pop Up & Icons */
@@ -133,8 +150,8 @@ body {
 .footer {
   width: 350px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  margin-bottom: -20px;
 }
 
 #status {

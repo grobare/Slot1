@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Slot Game</title>
+    <title>Triple 8s</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Arvo"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="slot-machine">
-      <h1>Slot Game</h1>
+      <h1>TRIPLE EIGHTS</h1>
       <div class="reels">
         <div class="reel">
-          <div class="number" id="number1">0</div>
+          <div class="number" id="number1">8</div>
         </div>
         <div class="reel">
-          <div class="number" id="number2">0</div>
+          <div class="number" id="number2">8</div>
         </div>
         <div class="reel">
-          <div class="number" id="number3">0</div>
+          <div class="number" id="number3">8</div>
         </div>
       </div>
       <div class="controls">
         <label
-          ><input type="radio" name="reel-bet" id="reel1" value="1" checked />1
+          ><input type="radio" name="reel-bet" id="reel1" value="1" />1
           reel</label
         >
         <label
@@ -32,7 +33,7 @@
           reels</label
         >
         <label
-          ><input type="radio" name="reel-bet" id="reel3" value="3" />3
+          ><input type="radio" name="reel-bet" id="reel3" value="3" checked />3
           reels</label
         >
         <button class="spin-btn" onclick="spin()">SPIN</button>
@@ -100,6 +101,5 @@
     <audio id="background-music" loop>
       <source src="/Slot1/background.mp3" type="audio/mpeg" />
     </audio>
-    <script src="script.js"></script>
   </body>
 </html>
