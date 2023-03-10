@@ -1,1 +1,1 @@
-My goal is to create the simple game of luck with progressive jackpot.
+My goal is to create simple game of luck with progressive jackpot using vanilla js.
