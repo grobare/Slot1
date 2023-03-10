@@ -1,4 +1,5 @@
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; // array of numbers to be shown on the reels
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// array of numbers to be shown on the reels
 const reel1 = document.getElementById("number1"); // get the element for reel 1
 const reel2 = document.getElementById("number2"); // get the element for reel 2
 const reel3 = document.getElementById("number3"); // get the element for reel 3
@@ -6,6 +7,7 @@ let credits = 100; // starting credits for the player
 const creditDisplay = document.getElementById("credits"); // get the element for displaying credits
 let jackpot = 1000;
 const jackpotAmount = document.getElementById("jackpot"); //Jackpot amount
+let playerGuess;
 
 function spin() {
   // check if the player have enough credits
@@ -19,6 +21,10 @@ function spin() {
     }, 1000);
     return;
   }
+
+  jackpot += 1 * 0.08; // 8% of each bet are added to JP pot
+  jackpotAmount.textContent = Math.round(jackpot * 100) / 100; //update jackpot rounded to 2 decimals
+
   // randomly select a number from the array for each reel
   const num1 = numbers[Math.floor(Math.random() * numbers.length)];
   const num2 = numbers[Math.floor(Math.random() * numbers.length)];
@@ -27,19 +33,11 @@ function spin() {
     "input[name='reel-bet']:checked"
   ).value;
 
-  // animate the reels spinning
-  reel1.style.animation = "spin 1s ease-out";
-  reel2.style.animation = "spin 1s ease-out";
-  reel3.style.animation = "spin 1s ease-out";
-
   // update the numbers on the reels after the animation finishes
   setTimeout(() => {
     reel1.textContent = num1;
     reel2.textContent = num2;
     reel3.textContent = num3;
-    reel1.style.animation = "";
-    reel2.style.animation = "";
-    reel3.style.animation = "";
 
     // check if the player has won
     let winAmount = 0;
@@ -54,10 +52,8 @@ function spin() {
     } else if (reelsBet === "3") {
       if (num1 === "8" && num2 === "8" && num3 === "8") {
         winAmount = 888; //Probability: 1 / 1000;
-        //add extra game with cards to win jackpot
+        playJackpot();
       }
-      jackpot += 1 * 0.08; // 8% of each bet are added to JP pot
-      jackpotAmount.textContent = Math.round(jackpot * 100) / 100; //update jackpot rounded to 2 decimals
     }
 
     // compute the new credits balance based on the outcome of the spin
@@ -76,9 +72,22 @@ function spin() {
   }, 1000);
 }
 
-// function getBetAmount() {
-//   return 1; // always bet 1 credit
-// }
+//Jackpot
+
+let result; //result of random draw for jackpot
+function playJackpot() {
+  result = Math.floor(Math.random() * 52) + 1; //generate number 1-52
+  playerGuess = parseInt(
+    prompt("Guess same number as PC and win JackPot! 1-52 ")
+  );
+
+  if (result === playerGuess) {
+    credits += jackpot;
+    creditDisplay.textContent = credits;
+    jackpot = 1000;
+    jackpotAmount.textContent = jackpot;
+  }
+}
 
 // Icons & Pop Up
 
