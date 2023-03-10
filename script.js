@@ -120,6 +120,15 @@ toggleMusicButton.addEventListener("click", function () {
   }
 });
 
+//Spin sound
+
+const spinSound = document.getElementById("spin-sound");
+const spinButton = document.querySelector(".spin-btn");
+
+spinButton.addEventListener("click", () => {
+  spinSound.play();
+});
+
 //Auto spin
 
 var autoSpinInterval = null;
