@@ -3,7 +3,7 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const reel1 = document.getElementById("number1"); // get the element for reel 1
 const reel2 = document.getElementById("number2"); // get the element for reel 2
 const reel3 = document.getElementById("number3"); // get the element for reel 3
-let credits = 1.5; // starting credits for the player
+let credits = 100; // starting credits for the player
 const creditDisplay = document.getElementById("credits"); // get the element for displaying credits
 let jackpot = 1000; //seeding jackpot
 const jackpotAmount = document.getElementById("jackpot"); //Jackpot amount
@@ -106,7 +106,7 @@ document.querySelector(".auto-spin-btn").addEventListener("click", function () {
   }
 });
 
-//Jackpot
+//Jackpot game
 
 let result; //result of random draw for jackpot
 function playJackpot() {
@@ -116,10 +116,12 @@ function playJackpot() {
   );
 
   if (result === playerGuess) {
-    credits += jackpot;
-    creditDisplay.textContent = credits;
-    jackpot = 1000;
+    credits += jackpot; //payout to player
+    creditDisplay.textContent = credits; //display updated credits
+    jackpot = 1000; //seed starting jackpot amount
     jackpotAmount.textContent = jackpot;
+  } else {
+    alert(`Winning number was ${result}`);
   }
 }
 
