@@ -3,7 +3,7 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const reel1 = document.getElementById("number1"); // get the element for reel 1
 const reel2 = document.getElementById("number2"); // get the element for reel 2
 const reel3 = document.getElementById("number3"); // get the element for reel 3
-let credits = 100; // starting credits for the player
+let credits = 1.5; // starting credits for the player
 const creditDisplay = document.getElementById("credits"); // get the element for displaying credits
 let jackpot = 1000; //seeding jackpot
 const jackpotAmount = document.getElementById("jackpot"); //Jackpot amount
@@ -11,6 +11,11 @@ let playerGuess; //Jackpot chance
 const spinSound = document.getElementById("spin-sound"); //Get spin sound
 
 function spin() {
+  if (credits < 1) {
+    creditDisplay.style.color = "red";
+    creditDisplay.style.weight = "600";
+    return;
+  }
   jackpot += 1 * 0.08; // 8% of each bet are added to JP pot
   jackpotAmount.textContent = Math.round(jackpot * 100) / 100; //update jackpot rounded to 2 decimals
 
@@ -64,12 +69,13 @@ function spin() {
 
 const spinButton = document.querySelector(".spin-btn");
 spinButton.addEventListener("click", () => {
-  if (credits >= 1) {
-    spinSound.play();
-    spin();
-  } else {
+  if (credits < 1) {
+    //if there are not enough credits
     creditDisplay.style.color = "red";
     creditDisplay.style.weight = "600";
+  } else {
+    spinSound.play();
+    spin();
   }
 });
 
@@ -80,10 +86,8 @@ var autoSpinInterval = null;
 function autoSpin() {
   if (!autoSpinInterval) {
     autoSpinInterval = setInterval(function () {
-      if (credits >= 1) {
-        spin();
-      }
-    }, 1000);
+      spin();
+    }, 2000);
   }
 }
 
@@ -121,10 +125,10 @@ function playJackpot() {
 
 // Icons & Pop Up
 
-const settingsIcon = document.querySelector(".settings-icon"); //Icon
-const settingsPopUp = document.querySelector(".popup-container"); // Pop up window
+const settingsIcon = document.querySelector(".settings-icon"); //get the element for information
+const settingsPopUp = document.querySelector(".popup-container"); //get the pop up window
 
-//show Setiings
+//show pop up window
 settingsIcon.addEventListener("click", () => {
   settingsPopUp.style.display = "flex";
 });
@@ -139,7 +143,7 @@ closePopupButtons.forEach((button) => {
   });
 });
 
-//Music
+//Background music
 
 const music = document.getElementById("background-music");
 const toggleMusicButton = document.getElementById("toggle-music");
