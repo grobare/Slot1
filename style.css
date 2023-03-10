@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   height: 100vh;
   padding: 0;
@@ -13,7 +16,7 @@ body {
 
 .slot-machine h1 {
   font-family: "Bangers", cursive;
-  font-size: 48px;
+  font-size: 40px;
   color: #fff;
   text-shadow: 2px 2px #000;
   margin: 0;
@@ -34,6 +37,7 @@ body {
 .jackpot-container {
   font-size: 22px;
   font-weight: 900;
+  width: 200px;
 }
 
 .jackpot-container span {
@@ -124,6 +128,7 @@ body {
 
 .settings-icon img {
   height: 24px;
+  margin-bottom: -5px;
 }
 .icons {
   display: flex;
@@ -184,7 +189,7 @@ body {
 /* Footer */
 
 .footer {
-  width: 350px;
+  width: 520px;
   display: flex;
   justify-content: space-between;
   margin-bottom: -20px;
@@ -192,4 +197,5 @@ body {
 
 #status {
   font-size: 20px;
+  width: 135px;
 }
