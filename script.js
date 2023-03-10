@@ -8,16 +8,9 @@ const creditDisplay = document.getElementById("credits"); // get the element for
 let jackpot = 1000; //seeding jackpot
 const jackpotAmount = document.getElementById("jackpot"); //Jackpot amount
 let playerGuess; //Jackpot chance
+const spinSound = document.getElementById("spin-sound"); //Get spin sound
 
 function spin() {
-  // check if the player have enough credits
-  if (credits < 1) {
-    creditDisplay.style.color = "red";
-    creditDisplay.style.weight = "600";
-
-    return; //break the function
-  }
-
   jackpot += 1 * 0.08; // 8% of each bet are added to JP pot
   jackpotAmount.textContent = Math.round(jackpot * 100) / 100; //update jackpot rounded to 2 decimals
 
@@ -67,6 +60,47 @@ function spin() {
     }
   }, 1000);
 }
+//Spinning
+
+const spinButton = document.querySelector(".spin-btn");
+spinButton.addEventListener("click", () => {
+  if (credits >= 1) {
+    spinSound.play();
+    spin();
+  } else {
+    creditDisplay.style.color = "red";
+    creditDisplay.style.weight = "600";
+  }
+});
+
+//Auto spin
+
+var autoSpinInterval = null;
+
+function autoSpin() {
+  if (!autoSpinInterval) {
+    autoSpinInterval = setInterval(function () {
+      if (credits >= 1) {
+        spin();
+      }
+    }, 1000);
+  }
+}
+
+function stopAutoSpin() {
+  clearInterval(autoSpinInterval);
+  autoSpinInterval = null;
+}
+
+document.querySelector(".auto-spin-btn").addEventListener("click", function () {
+  if (autoSpinInterval) {
+    stopAutoSpin();
+    this.textContent = "AUTO";
+  } else {
+    autoSpin();
+    this.textContent = "STOP";
+  }
+});
 
 //Jackpot
 
@@ -117,41 +151,5 @@ toggleMusicButton.addEventListener("click", function () {
   } else {
     music.pause();
     toggleMusicButton.innerText = "Turn On Music";
-  }
-});
-
-//Spin sound
-
-const spinSound = document.getElementById("spin-sound");
-const spinButton = document.querySelector(".spin-btn");
-
-spinButton.addEventListener("click", () => {
-  spinSound.play();
-});
-
-//Auto spin
-
-var autoSpinInterval = null;
-
-function autoSpin() {
-  if (!autoSpinInterval) {
-    autoSpinInterval = setInterval(function () {
-      spin();
-    }, 1000);
-  }
-}
-
-function stopAutoSpin() {
-  clearInterval(autoSpinInterval);
-  autoSpinInterval = null;
-}
-
-document.querySelector(".auto-spin-btn").addEventListener("click", function () {
-  if (autoSpinInterval) {
-    stopAutoSpin();
-    this.textContent = "AUTO";
-  } else {
-    autoSpin();
-    this.textContent = "STOP";
   }
 });
