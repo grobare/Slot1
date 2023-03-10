@@ -4,6 +4,8 @@ const reel2 = document.getElementById("number2"); // get the element for reel 2
 const reel3 = document.getElementById("number3"); // get the element for reel 3
 let credits = 100; // starting credits for the player
 const creditDisplay = document.getElementById("credits"); // get the element for displaying credits
+let jackpot = 1000;
+const jackpotAmount = document.getElementById("jackpot"); //Jackpot amount
 
 function spin() {
   // check if the player have enough credits
@@ -54,6 +56,8 @@ function spin() {
         winAmount = 888; //Probability: 1 / 1000;
         //add extra game with cards to win jackpot
       }
+      jackpot += 1 * 0.08; // 8% of each bet are added to JP pot
+      jackpotAmount.textContent = Math.round(jackpot * 100) / 100; //update jackpot rounded to 2 decimals
     }
 
     // compute the new credits balance based on the outcome of the spin

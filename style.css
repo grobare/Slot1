@@ -16,7 +16,7 @@ body {
   font-size: 48px;
   color: #fff;
   text-shadow: 2px 2px #000;
-  margin: 10px 0;
+  margin: 0;
 }
 
 .slot-machine {
@@ -29,6 +29,15 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.jackpot-container {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.jackpot-container span {
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .reels {
