@@ -5,7 +5,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Arvo";
+  font-family: "Arvo", sans-serif;
 }
 
 /* import the font from Google Fonts */
@@ -13,10 +13,11 @@ body {
 
 .slot-machine h1 {
   font-family: "Bangers", cursive;
-  font-size: 40px;
+  font-size: 35px;
   color: #fff;
   text-shadow: 2px 2px #000;
   margin: 0;
+  text-decoration: underline 5px;
 }
 
 .slot-machine {
@@ -29,16 +30,14 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
 }
 
 .jackpot-container {
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 700;
   width: 200px;
-}
-
-.jackpot-container span {
-  text-decoration: underline;
 }
 
 .reels {
