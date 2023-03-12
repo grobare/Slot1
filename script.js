@@ -37,15 +37,15 @@ function spin() {
     let winAmount = 0;
     if (reelsBet === "1") {
       if (num1 === "8") {
-        winAmount = 8.8; //Probability: 1 / 10;
+        winAmount = 8.8; //Probability: 1 / 10
       }
     } else if (reelsBet === "2") {
       if (num1 === "8" && num2 === "8") {
-        winAmount = 88; //Probability: 1 / 100;
+        winAmount = 88; //Probability: 1 / 100
       }
     } else {
       if (num1 === "8" && num2 === "8" && num3 === "8") {
-        winAmount = 888; //Probability: 1 / 1000;
+        winAmount = 888; //Probability: 1 / 1000
         playJackpot();
       }
     }
