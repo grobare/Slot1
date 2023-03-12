@@ -6,6 +6,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Arvo", sans-serif;
+  background: #eee;
 }
 
 /* import the font from Google Fonts */
@@ -15,9 +16,8 @@ body {
   font-family: "Bangers", cursive;
   font-size: 35px;
   color: #fff;
-  text-shadow: 2px 2px #000;
+  text-shadow: 3px 3px #000;
   margin: 0;
-  text-decoration: underline 5px;
 }
 
 .slot-machine {

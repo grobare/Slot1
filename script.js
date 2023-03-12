@@ -14,7 +14,7 @@ function spin() {
   if (credits < 1) {
     creditDisplay.style.color = "red";
     creditDisplay.style.weight = "600";
-    return;
+    return; //Break from function if there are not enough credits
   }
   jackpot += 1 * 0.08; // 8% of each bet are added to JP pot
   jackpotAmount.textContent = Math.round(jackpot * 100) / 100; //update jackpot rounded to 2 decimals
@@ -23,11 +23,12 @@ function spin() {
   const num1 = numbers[Math.floor(Math.random() * numbers.length)];
   const num2 = numbers[Math.floor(Math.random() * numbers.length)];
   const num3 = numbers[Math.floor(Math.random() * numbers.length)];
+  //get number of reels player bet on
   const reelsBet = document.querySelector(
     "input[name='reel-bet']:checked"
   ).value;
 
-  // update the numbers on the reels after the animation finishes
+  // update the numbers on the reels after the delay
   setTimeout(() => {
     reel1.textContent = num1;
     reel2.textContent = num2;
@@ -43,7 +44,7 @@ function spin() {
       if (num1 === "8" && num2 === "8") {
         winAmount = 88; //Probability: 1 / 100;
       }
-    } else if (reelsBet === "3") {
+    } else {
       if (num1 === "8" && num2 === "8" && num3 === "8") {
         winAmount = 888; //Probability: 1 / 1000;
         playJackpot();
