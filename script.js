@@ -1,5 +1,4 @@
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-// array of numbers to be shown on the reels
+const numbers = ["8"]; // array of numbers to be shown on the reels
 const reel1 = document.getElementById("number1"); // get the element for reel 1
 const reel2 = document.getElementById("number2"); // get the element for reel 2
 const reel3 = document.getElementById("number3"); // get the element for reel 3
